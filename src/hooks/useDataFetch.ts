@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useReducer } from "react";
+import { Reducer, useCallback, useEffect, useReducer } from "react";
 
 const useDataFetch = () => {
   enum DataFetchActions {
@@ -10,22 +10,19 @@ const useDataFetch = () => {
   const INITIAL_STATE = {
     data: [],
     isLoading: false,
-    isError: false,
+    error: "",
   };
-
-  type TActions =
+  type TState = {
+    data: Record<string, string | number>[];
+    isLoading: boolean;
+    error: string;
+  };
+  type TAction =
     | { type: "LOADING" }
     | { type: "ERROR"; payload: string }
     | { type: "SUCCESS"; payload: any[] };
 
-  const reducer = (
-    state: {
-      data: any;
-      isLoading: boolean;
-      isError: boolean;
-    },
-    action: TActions,
-  ) => {
+  const dataReducer = (state: TState, action: TAction) => {
     switch (action.type) {
       case DataFetchActions.LOADING:
         return {
@@ -36,12 +33,12 @@ const useDataFetch = () => {
         return {
           error: action?.payload,
           isLoading: false,
-          data: null,
+          data: [],
         };
       case DataFetchActions.SUCCESS:
         return {
           isLoading: false,
-          isError: false,
+          error: "",
           data: action.payload,
         };
 
@@ -49,7 +46,10 @@ const useDataFetch = () => {
         throw Error("Unknown action");
     }
   };
-  const [state, dispatch] = useReducer(reducer, INITIAL_STATE);
+  const [state, dispatch] = useReducer<Reducer<TState, TAction>>(
+    dataReducer,
+    INITIAL_STATE,
+  );
 
   const getData = useCallback(async () => {
     try {
@@ -63,7 +63,9 @@ const useDataFetch = () => {
       dispatch({ type: "SUCCESS", payload: response });
     } catch (error) {
       console.log(error);
-      dispatch({ type: "ERROR", payload: error.message });
+      if (error instanceof Error) {
+        dispatch({ type: "ERROR", payload: error.message });
+      }
     }
   }, []);
 
