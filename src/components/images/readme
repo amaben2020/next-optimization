@@ -1,0 +1,20 @@
+When tou want to use next image as background, use fill, object fit cover, sizes="100vw" placeholder="blur"
+sizes: telling next js not to use unnecessary images based on viewport when using fill
+
+quality: 100
+
+placeholder: used for only local images
+
+using relative parent: you should give the wrapping div height i.e when building cards
+
+2. Use avif and webP formats for better speed
+   images: {
+   formats: ["image/avif", "image/webp"],
+   remotePatterns: [
+   {
+   protocol: "https",
+   hostname: "image.mux.com",
+   },
+   ],
+   },
+3. Responsive images:

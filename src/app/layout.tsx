@@ -72,7 +72,7 @@ export default function RootLayout({
           consequuntur dicta architecto atque ab eum, ipsam repellendus quod
           delectus quisquam ratione sequi ea.
         </p>
-        <p className="font-secondary">
+        <p className="font-secondary italic">
           {" "}
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus,
           natus. Deleniti totam repudiandae quibusdam dolore tempora
