@@ -1,50 +1,69 @@
 import { useCallback, useEffect, useReducer } from "react";
 
 const useDataFetch = () => {
+  enum DataFetchActions {
+    LOADING = "LOADING",
+    ERROR = "ERROR",
+    SUCCESS = "SUCCESS",
+  }
+
   const INITIAL_STATE = {
     data: [],
     isLoading: false,
     isError: false,
   };
+
+  type TActions =
+    | { type: "LOADING" }
+    | { type: "ERROR"; payload: string }
+    | { type: "SUCCESS"; payload: any[] };
+
   const reducer = (
-    state: typeof INITIAL_STATE,
-    action: { type: any; payload: any },
+    state: {
+      data: any;
+      isLoading: boolean;
+      isError: boolean;
+    },
+    action: TActions,
   ) => {
     switch (action.type) {
-      case "IS_LOADING":
+      case DataFetchActions.LOADING:
         return {
           ...state,
-          data: action.payload,
+          isLoading: true,
         };
-      case "IS_ERROR":
+      case DataFetchActions.ERROR:
         return {
-          ...state,
-          error: action.payload,
+          error: action?.payload,
+          isLoading: false,
+          data: null,
         };
-      case "DATA":
+      case DataFetchActions.SUCCESS:
         return {
-          ...state,
+          isLoading: false,
+          isError: false,
           data: action.payload,
         };
 
       default:
-        return state;
+        throw Error("Unknown action");
     }
   };
   const [state, dispatch] = useReducer(reducer, INITIAL_STATE);
 
   const getData = useCallback(async () => {
     try {
-      dispatch({ type: "IS_LOADING" });
+      dispatch({ type: "LOADING" });
       const data = await fetch("https://jsonplaceholder.typicode.com/posts", {
         method: "GET",
       });
 
       const response = await data.json();
 
-      dispatch({ type: "DATA", payload: response });
+      dispatch({ type: "SUCCESS", payload: response });
     } catch (error) {
-      dispatch({ type: "IS_ERROR", payload: error });
+      console.log(error);
+      dispatch({ type: "ERROR", payload: error.message });
     }
   }, []);
 
