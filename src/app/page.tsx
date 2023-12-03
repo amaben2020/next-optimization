@@ -1,11 +1,238 @@
 "use client";
-import useDataFetch from "@/hooks/useDataFetch";
+
+import useInView from "@/hooks/view/useInView";
 
 export default function Home() {
-  const { state } = useDataFetch();
+  // const { data, isLoading, error } = useDataFetch("posts");
+
+  const { isInView, ref } = useInView();
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      {JSON.stringify(state)}
+      {isInView}
+      {/* {JSON.stringify(data)} */}
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem
+      quibusdam, quaerat vitae sit minima sed, et, exercitationem explicabo hic
+      iste obcaecati aperiam voluptatum distinctio voluptate repellat ea
+      dignissimos accusantium nesciunt. Lorem ipsum dolor, sit amet consectetur
+      adipisicing elit. Dolorem quibusdam, quaerat vitae sit minima sed, et,
+      exercitationem explicabo hic iste obcaecati aperiam voluptatum distinctio
+      voluptate repellat ea dignissimos accusantium nesciunt. Lorem ipsum dolor,
+      sit amet consectetur adipisicing elit. Dolorem quibusdam, quaerat vitae
+      sit minima sed, et, exercitationem explicabo hic iste obcaecati aperiam
+      voluptatum distinctio voluptate repellat ea dignissimos accusantium
+      nesciunt. Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+      Dolorem quibusdam, quaerat vitae sit minima sed, et, exercitationem
+      explicabo hic iste obcaecati aperiam voluptatum distinctio voluptate
+      repellat ea dignissimos accusantium nesciunt. adipisicing elit. Dolorem
+      quibusdam, quaerat vitae sit minima sed, et, exercitationem explicabo hic
+      iste obcaecati aperiam voluptatum distinctio voluptate repellat ea
+      dignissimos accusantium nesciunt. Lorem ipsum dolor, sit amet consectetur
+      adipisicing elit. Dolorem quibusdam, quaerat vitae sit minima sed, et,
+      exercitationem explicabo hic iste obcaecati aperiam voluptatum distinctio
+      voluptate repellat ea dignissimos accusantium nesciunt. Lorem ipsum dolor,
+      sit amet consectetur adipisicing elit. Dolorem quibusdam, quaerat vitae
+      sit minima sed, et, exercitationem explicabo hic iste obcaecati aperiam
+      voluptatum distinctio voluptate repellat ea dignissimos accusantium
+      nesciunt. adipisicing elit. Dolorem quibusdam, quaerat vitae sit minima
+      sed, et, exercitationem explicabo hic iste obcaecati aperiam voluptatum
+      distinctio voluptate repellat ea dignissimos accusantium nesciunt. Lorem
+      ipsum dolor, sit amet consectetur adipisicing elit. Dolorem quibusdam,
+      quaerat vitae sit minima sed, et, exercitationem explicabo hic iste
+      obcaecati aperiam voluptatum distinctio voluptate repellat ea dignissimos
+      accusantium nesciunt. Lorem ipsum dolor, sit amet consectetur adipisicing
+      elit. Dolorem quibusdam, quaerat vitae sit minima sed, et, exercitationem
+      explicabo hic iste obcaecati aperiam voluptatum distinctio voluptate
+      repellat ea dignissimos accusantium nesciunt. adipisicing elit. Dolorem
+      quibusdam, quaerat vitae sit minima sed, et, exercitationem explicabo hic
+      iste obcaecati aperiam voluptatum distinctio voluptate repellat ea
+      dignissimos accusantium nesciunt. Lorem ipsum dolor, sit amet consectetur
+      adipisicing elit. Dolorem quibusdam, quaerat vitae sit minima sed, et,
+      exercitationem explicabo hic iste obcaecati aperiam voluptatum distinctio
+      voluptate repellat ea dignissimos accusantium nesciunt. Lorem ipsum dolor,
+      sit amet consectetur adipisicing elit. Dolorem quibusdam, quaerat vitae
+      sit minima sed, et, exercitationem explicabo hic iste obcaecati aperiam
+      voluptatum distinctio voluptate repellat ea dignissimos accusantium
+      nesciunt. adipisicing elit. Dolorem quibusdam, quaerat vitae sit minima
+      sed, et, exercitationem explicabo hic iste obcaecati aperiam voluptatum
+      distinctio voluptate repellat ea dignissimos accusantium nesciunt. Lorem
+      ipsum dolor, sit amet consectetur adipisicing elit. Dolorem quibusdam,
+      quaerat vitae sit minima sed, et, exercitationem explicabo hic iste
+      obcaecati aperiam voluptatum distinctio voluptate repellat ea dignissimos
+      accusantium nesciunt. Lorem ipsum dolor, sit amet consectetur adipisicing
+      elit. Dolorem quibusdam, quaerat vitae sit minima sed, et, exercitationem
+      explicabo hic iste obcaecati aperiam voluptatum distinctio voluptate
+      repellat ea dignissimos accusantium nesciunt. adipisicing elit. Dolorem
+      quibusdam, quaerat vitae sit minima sed, et, exercitationem explicabo hic
+      iste obcaecati aperiam voluptatum distinctio voluptate repellat ea
+      dignissimos accusantium nesciunt. Lorem ipsum dolor, sit amet consectetur
+      adipisicing elit. Dolorem quibusdam, quaerat vitae sit minima sed, et,
+      exercitationem explicabo hic iste obcaecati aperiam voluptatum distinctio
+      voluptate repellat ea dignissimos accusantium nesciunt. Lorem ipsum dolor,
+      sit amet consectetur adipisicing elit. Dolorem quibusdam, quaerat vitae
+      sit minima sed, et, exercitationem explicabo hic iste obcaecati aperiam
+      voluptatum distinctio voluptate repellat ea dignissimos accusantium
+      nesciunt. adipisicing elit. Dolorem quibusdam, quaerat vitae sit minima
+      sed, et, exercitationem explicabo hic iste obcaecati aperiam voluptatum
+      distinctio voluptate repellat ea dignissimos accusantium nesciunt. Lorem
+      ipsum dolor, sit amet consectetur adipisicing elit. Dolorem quibusdam,
+      quaerat vitae sit minima sed, et, exercitationem explicabo hic iste
+      obcaecati aperiam voluptatum distinctio voluptate repellat ea dignissimos
+      accusantium nesciunt. Lorem ipsum dolor, sit amet consectetur adipisicing
+      elit. Dolorem quibusdam, quaerat vitae sit minima sed, et, exercitationem
+      explicabo hic iste obcaecati aperiam voluptatum distinctio voluptate
+      repellat ea dignissimos accusantium nesciunt. adipisicing elit. Dolorem
+      quibusdam, quaerat vitae sit minima sed, et, exercitationem explicabo hic
+      iste obcaecati aperiam voluptatum distinctio voluptate repellat ea
+      dignissimos accusantium nesciunt. Lorem ipsum dolor, sit amet consectetur
+      adipisicing elit. Dolorem quibusdam, quaerat vitae sit minima sed, et,
+      exercitationem explicabo hic iste obcaecati aperiam voluptatum distinctio
+      voluptate repellat ea dignissimos accusantium nesciunt. Lorem ipsum dolor,
+      sit amet consectetur adipisicing elit. Dolorem quibusdam, quaerat vitae
+      sit minima sed, et, exercitationem explicabo hic iste obcaecati aperiam
+      voluptatum distinctio voluptate repellat ea dignissimos accusantium
+      nesciunt. adipisicing elit. Dolorem quibusdam, quaerat vitae sit minima
+      sed, et, exercitationem explicabo hic iste obcaecati aperiam voluptatum
+      distinctio voluptate repellat ea dignissimos accusantium nesciunt. Lorem
+      ipsum dolor, sit amet consectetur adipisicing elit. Dolorem quibusdam,
+      quaerat vitae sit minima sed, et, exercitationem explicabo hic iste
+      obcaecati aperiam voluptatum distinctio voluptate repellat ea dignissimos
+      accusantium nesciunt. Lorem ipsum dolor, sit amet consectetur adipisicing
+      elit. Dolorem quibusdam, quaerat vitae sit minima sed, et, exercitationem
+      explicabo hic iste obcaecati aperiam voluptatum distinctio voluptate
+      repellat ea dignissimos accusantium nesciunt. adipisicing elit. Dolorem
+      quibusdam, quaerat vitae sit minima sed, et, exercitationem explicabo hic
+      iste obcaecati aperiam voluptatum distinctio voluptate repellat ea
+      dignissimos accusantium nesciunt. Lorem ipsum dolor, sit amet consectetur
+      adipisicing elit. Dolorem quibusdam, quaerat vitae sit minima sed, et,
+      exercitationem explicabo hic iste obcaecati aperiam voluptatum distinctio
+      voluptate repellat ea dignissimos accusantium nesciunt. Lorem ipsum dolor,
+      sit amet consectetur adipisicing elit. Dolorem quibusdam, quaerat vitae
+      sit minima sed, et, exercitationem explicabo hic iste obcaecati aperiam
+      voluptatum distinctio voluptate repellat ea dignissimos accusantium
+      nesciunt. adipisicing elit. Dolorem quibusdam, quaerat vitae sit minima
+      sed, et, exercitationem explicabo hic iste obcaecati aperiam voluptatum
+      distinctio voluptate repellat ea dignissimos accusantium nesciunt. Lorem
+      ipsum dolor, sit amet consectetur adipisicing elit. Dolorem quibusdam,
+      quaerat vitae sit minima sed, et, exercitationem explicabo hic iste
+      obcaecati aperiam voluptatum distinctio voluptate repellat ea dignissimos
+      accusantium nesciunt. Lorem ipsum dolor, sit amet consectetur adipisicing
+      elit. Dolorem quibusdam, quaerat vitae sit minima sed, et, exercitationem
+      explicabo hic iste obcaecati aperiam voluptatum distinctio voluptate
+      repellat ea dignissimos accusantium nesciunt. adipisicing elit. Dolorem
+      quibusdam, quaerat vitae sit minima sed, et, exercitationem explicabo hic
+      iste obcaecati aperiam voluptatum distinctio voluptate repellat ea
+      dignissimos accusantium nesciunt. Lorem ipsum dolor, sit amet consectetur
+      adipisicing elit. Dolorem quibusdam, quaerat vitae sit minima sed, et,
+      exercitationem explicabo hic iste obcaecati aperiam voluptatum distinctio
+      voluptate repellat ea dignissimos accusantium nesciunt. Lorem ipsum dolor,
+      sit amet consectetur adipisicing elit. Dolorem quibusdam, quaerat vitae
+      sit minima sed, et, exercitationem explicabo hic iste obcaecati aperiam
+      voluptatum distinctio voluptate repellat ea dignissimos accusantium
+      nesciunt. adipisicing elit. Dolorem quibusdam, quaerat vitae sit minima
+      sed, et, exercitationem explicabo hic iste obcaecati aperiam voluptatum
+      distinctio voluptate repellat ea dignissimos accusantium nesciunt. Lorem
+      ipsum dolor, sit amet consectetur adipisicing elit. Dolorem quibusdam,
+      quaerat vitae sit minima sed, et, exercitationem explicabo hic iste
+      obcaecati aperiam voluptatum distinctio voluptate repellat ea dignissimos
+      accusantium nesciunt. Lorem ipsum dolor, sit amet consectetur adipisicing
+      elit. Dolorem quibusdam, quaerat vitae sit minima sed, et, exercitationem
+      explicabo hic iste obcaecati aperiam voluptatum distinctio voluptate
+      repellat ea dignissimos accusantium nesciunt. adipisicing elit. Dolorem
+      quibusdam, quaerat vitae sit minima sed, et, exercitationem explicabo hic
+      iste obcaecati aperiam voluptatum distinctio voluptate repellat ea
+      dignissimos accusantium nesciunt. Lorem ipsum dolor, sit amet consectetur
+      adipisicing elit. Dolorem quibusdam, quaerat vitae sit minima sed, et,
+      exercitationem explicabo hic iste obcaecati aperiam voluptatum distinctio
+      voluptate repellat ea dignissimos accusantium nesciunt. Lorem ipsum dolor,
+      sit amet consectetur adipisicing elit. Dolorem quibusdam, quaerat vitae
+      sit minima sed, et, exercitationem explicabo hic iste obcaecati aperiam
+      voluptatum distinctio voluptate repellat ea dignissimos accusantium
+      nesciunt. adipisicing elit. Dolorem quibusdam, quaerat vitae sit minima
+      sed, et, exercitationem explicabo hic iste obcaecati aperiam voluptatum
+      distinctio voluptate repellat ea dignissimos accusantium nesciunt. Lorem
+      ipsum dolor, sit amet consectetur adipisicing elit. Dolorem quibusdam,
+      quaerat vitae sit minima sed, et, exercitationem explicabo hic iste
+      obcaecati aperiam voluptatum distinctio voluptate repellat ea dignissimos
+      accusantium nesciunt. Lorem ipsum dolor, sit amet consectetur adipisicing
+      elit. Dolorem quibusdam, quaerat vitae sit minima sed, et, exercitationem
+      explicabo hic iste obcaecati aperiam voluptatum distinctio voluptate
+      repellat ea dignissimos accusantium nesciunt. adipisicing elit. Dolorem
+      quibusdam, quaerat vitae sit minima sed, et, exercitationem explicabo hic
+      iste obcaecati aperiam voluptatum distinctio voluptate repellat ea
+      dignissimos accusantium nesciunt. Lorem ipsum dolor, sit amet consectetur
+      adipisicing elit. Dolorem quibusdam, quaerat vitae sit minima sed, et,
+      exercitationem explicabo hic iste obcaecati aperiam voluptatum distinctio
+      voluptate repellat ea dignissimos accusantium nesciunt. Lorem ipsum dolor,
+      sit amet consectetur adipisicing elit. Dolorem quibusdam, quaerat vitae
+      sit minima sed, et, exercitationem explicabo hic iste obcaecati aperiam
+      voluptatum distinctio voluptate repellat ea dignissimos accusantium
+      nesciunt. adipisicing elit. Dolorem quibusdam, quaerat vitae sit minima
+      sed, et, exercitationem explicabo hic iste obcaecati aperiam voluptatum
+      distinctio voluptate repellat ea dignissimos accusantium nesciunt. Lorem
+      ipsum dolor, sit amet consectetur adipisicing elit. Dolorem quibusdam,
+      quaerat vitae sit minima sed, et, exercitationem explicabo hic iste
+      obcaecati aperiam voluptatum distinctio voluptate repellat ea dignissimos
+      accusantium nesciunt. Lorem ipsum dolor, sit amet consectetur adipisicing
+      elit. Dolorem quibusdam, quaerat vitae sit minima sed, et, exercitationem
+      explicabo hic iste obcaecati aperiam voluptatum distinctio voluptate
+      repellat ea dignissimos accusantium nesciunt. adipisicing elit. Dolorem
+      quibusdam, quaerat vitae sit minima sed, et, exercitationem explicabo hic
+      iste obcaecati aperiam voluptatum distinctio voluptate repellat ea
+      dignissimos accusantium nesciunt. Lorem ipsum dolor, sit amet consectetur
+      adipisicing elit. Dolorem quibusdam, quaerat vitae sit minima sed, et,
+      exercitationem explicabo hic iste obcaecati aperiam voluptatum distinctio
+      voluptate repellat ea dignissimos accusantium nesciunt. Lorem ipsum dolor,
+      sit amet consectetur adipisicing elit. Dolorem quibusdam, quaerat vitae
+      sit minima sed, et, exercitationem explicabo hic iste obcaecati aperiam
+      voluptatum distinctio voluptate repellat ea dignissimos accusantium
+      nesciunt. adipisicing elit. Dolorem quibusdam, quaerat vitae sit minima
+      sed, et, exercitationem explicabo hic iste obcaecati aperiam voluptatum
+      distinctio voluptate repellat ea dignissimos accusantium nesciunt. Lorem
+      ipsum dolor, sit amet consectetur adipisicing elit. Dolorem quibusdam,
+      quaerat vitae sit minima sed, et, exercitationem explicabo hic iste
+      obcaecati aperiam voluptatum distinctio voluptate repellat ea dignissimos
+      accusantium nesciunt. Lorem ipsum dolor, sit amet consectetur adipisicing
+      elit. Dolorem quibusdam, quaerat vitae sit minima sed, et, exercitationem
+      explicabo hic iste obcaecati aperiam voluptatum distinctio voluptate
+      repellat ea dignissimos accusantium nesciunt. adipisicing elit. Dolorem
+      quibusdam, quaerat vitae sit minima sed, et, exercitationem explicabo hic
+      iste obcaecati aperiam voluptatum distinctio voluptate repellat ea
+      dignissimos accusantium nesciunt. Lorem ipsum dolor, sit amet consectetur
+      adipisicing elit. Dolorem quibusdam, quaerat vitae sit minima sed, et,
+      exercitationem explicabo hic iste obcaecati aperiam voluptatum distinctio
+      voluptate repellat ea dignissimos accusantium nesciunt. Lorem ipsum dolor,
+      sit amet consectetur adipisicing elit. Dolorem quibusdam, quaerat vitae
+      sit minima sed, et, exercitationem explicabo hic iste obcaecati aperiam
+      voluptatum distinctio voluptate repellat ea dignissimos accusantium
+      nesciunt. adipisicing elit. Dolorem quibusdam, quaerat vitae sit minima
+      sed, et, exercitationem explicabo hic iste obcaecati aperiam voluptatum
+      distinctio voluptate repellat ea dignissimos accusantium nesciunt. Lorem
+      ipsum dolor, sit amet consectetur adipisicing elit. Dolorem quibusdam,
+      quaerat vitae sit minima sed, et, exercitationem explicabo hic iste
+      obcaecati aperiam voluptatum distinctio voluptate repellat ea dignissimos
+      accusantium nesciunt. Lorem ipsum dolor, sit amet consectetur adipisicing
+      elit. Dolorem quibusdam, quaerat vitae sit minima sed, et, exercitationem
+      explicabo hic iste obcaecati aperiam voluptatum distinctio voluptate
+      repellat ea dignissimos accusantium nesciunt. adipisicing elit. Dolorem
+      quibusdam, quaerat vitae sit minima sed, et, exercitationem explicabo hic
+      iste obcaecati aperiam voluptatum distinctio voluptate repellat ea
+      dignissimos accusantium nesciunt. Lorem ipsum dolor, sit amet consectetur
+      adipisicing elit. Dolorem quibusdam, quaerat vitae sit minima sed, et,
+      exercitationem explicabo hic iste obcaecati aperiam voluptatum distinctio
+      voluptate repellat ea dignissimos accusantium nesciunt. Lorem ipsum dolor,
+      sit amet consectetur adipisicing elit. Dolorem quibusdam, quaerat vitae
+      sit minima sed, et, exercitationem explicabo hic iste obcaecati aperiam
+      voluptatum distinctio voluptate repellat ea dignissimos accusantium
+      nesciunt.
+      <div
+        ref={ref as any}
+        style={{
+          height: "10vh",
+          border: `2px solid ${isInView ? "red" : "green"}`,
+        }}
+      >
+        {isInView ? "YEAH" : "NOPE"}
+      </div>
     </main>
   );
 }

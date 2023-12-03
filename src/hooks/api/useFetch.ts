@@ -1,6 +1,7 @@
+// without react query, using only fetch and useReducer
 import { Reducer, useCallback, useEffect, useReducer } from "react";
 
-const useDataFetch = () => {
+const useDataFetch = (path: string) => {
   enum DataFetchActions {
     LOADING = "LOADING",
     ERROR = "ERROR",
@@ -54,7 +55,7 @@ const useDataFetch = () => {
   const getData = useCallback(async () => {
     try {
       dispatch({ type: "LOADING" });
-      const data = await fetch("https://jsonplaceholder.typicode.com/posts", {
+      const data = await fetch(`https://jsonplaceholder.typicode.com/${path}`, {
         method: "GET",
       });
 
@@ -67,7 +68,7 @@ const useDataFetch = () => {
         dispatch({ type: "ERROR", payload: error.message });
       }
     }
-  }, []);
+  }, [path]);
 
   useEffect(() => {
     getData();
