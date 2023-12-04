@@ -19,6 +19,9 @@ const useInView = (): {
     if (ref.current) {
       observer.observe(ref?.current);
     }
+
+    // always cleanup
+    return () => observer.disconnect();
   }, []);
 
   return { isInView, ref };
