@@ -1,18 +1,20 @@
-import { useEffect, useRef, useState } from "react";
+import { MutableRefObject, useEffect, useRef, useState } from "react";
 
-const useInView = () => {
+const options = { threshold: [1] };
+
+const useInView = (): {
+  ref: MutableRefObject<null>;
+  isInView: boolean;
+} => {
   const [isInView, setIsInView] = useState(false);
-  const ref = useRef();
+  const ref = useRef(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          setIsInView(entry.isIntersecting);
-        });
-      },
-      { threshold: [0, 0.25, 0.5, 0.75, 1] },
-    );
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        setIsInView(entry.isIntersecting);
+      });
+    }, options);
 
     if (ref.current) {
       observer.observe(ref?.current);
