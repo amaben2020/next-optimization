@@ -1,11 +1,13 @@
 "use client";
 
+import { Input } from "@/components/input";
 import useInView from "@/hooks/view/useInView";
 
 export default function Home() {
   // const { data, isLoading, error } = useDataFetch("posts");
 
   const { isInView, ref } = useInView();
+
   return (
     <main
       className="flex min-h-screen flex-col items-center justify-between p-24"
@@ -13,7 +15,7 @@ export default function Home() {
         background: isInView ? "yellow" : "black",
       }}
     >
-      {isInView}
+      <Input />
       {/* {JSON.stringify(data)} */}
       Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem
       quibusdam, quaerat vitae sit minima sed, et, exercitationem explicabo hic
